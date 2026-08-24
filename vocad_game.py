@@ -100,12 +100,12 @@ ans2 = st.text_input(
     "ข้อ 2: Cats love to eat `f _ s h`. 🐟",
     value=st.session_state.ans2_val,
 )
-ans2 = st.text_input(
-    "ข้อ 2: Cats love to eat `_ _ n`.🖊️ ",
+ans3 = st.text_input(
+    "ข้อ 3: Cats love to eat `_ _ n`.🖊️ ",
     value=st.session_state.ans3_val,
 )
-ans2 = st.text_input(
-    "ข้อ 2: Cats love to eat `_ o c _ _ u _`.🥥  ",
+ans4 = st.text_input(
+    "ข้อ 4: Cats love to eat `_ o c _ _ u _`.🥥  ",
     value=st.session_state.ans4_val,
 
 
