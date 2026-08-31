@@ -104,10 +104,10 @@ ans3 = st.text_input(
     "ข้อ 3: Used to write `_ _ n`.🖊️ ",
     value=st.session_state.ans3_val,
 )
-ans3 = st.text_input(
+ans4 = st.text_input(
     "ข้อ 4: On the thees on the beach `_ o c _ _ u _`.🥥  ",
     value=st.session_state.ans4_val,
-
+)
 
 # อัปเดตค่าล่าสุดเข้าตัวแปร
 st.session_state.ans1_val = ans1
