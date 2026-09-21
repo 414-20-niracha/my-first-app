@@ -25,10 +25,10 @@ def reset_game():
 
 
 # ----------------------------------------------------
-# 📌 ฟังก์ชัน MessageBox (Dialog)
+# 📌 ฟังก์ชัน MessageBox (Dialog) - แก้ไขรับ 4 พารามิเตอร์
 # ----------------------------------------------------
 @st.dialog("📊 สรุปผลการเล่นเกม")
-def show_result_dialog(ans1, ans2):
+def show_result_dialog(ans1, ans2, ans3, ans4):
     st.balloons()
     score = 0
 
@@ -51,20 +51,19 @@ def show_result_dialog(ans1, ans2):
     else:
         st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
 
-  # ตรวจข้อ 3
+    # ตรวจข้อ 3
     if u_ans3 == "pen":
         st.success("✅ ข้อ 3: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
-    # ตรวจข้อ 4
-    if u_ans4 == "Coconut":
+    # ตรวจข้อ 4 - แก้ให้เป็น "coconut" ตัวพิมพ์เล็ก
+    if u_ans4 == "coconut":
         st.success("✅ ข้อ 4: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
-
 
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
 
@@ -91,7 +90,7 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
 
 st.divider()
 
-# 3. ช่องรับคำตอบ (ใช้ value ผูกกับตัวแปรตรงๆ เพื่อสั่งเคลียร์ได้)
+# 3. ช่องรับคำตอบ
 ans1 = st.text_input(
     "ข้อ 1: An `a _ _ l e` a day keeps the doctor away. 🍎",
     value=st.session_state.ans1_val,
@@ -105,7 +104,7 @@ ans3 = st.text_input(
     value=st.session_state.ans3_val,
 )
 ans4 = st.text_input(
-    "ข้อ 4: On the thees on the beach `_ o c _ _ u _`.🥥  ",
+    "ข้อ 4: On the trees on the beach `_ o c _ _ u _`.🥥  ",
     value=st.session_state.ans4_val,
 )
 
@@ -130,5 +129,3 @@ if st.session_state.get("is_ended", False):
 
 st.divider()
 st.write("นางสาวนิรชา ติโน เลขที่ 20 ม.4/14")
-
-
